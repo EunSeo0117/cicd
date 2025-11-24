@@ -1,0 +1,11 @@
+services:
+  express:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ./cicd:/app
+    ports:
+      - "3000:3000"
+    environment:
+      API_TARGET: "http://host.docker.internal:8080"
+    command: sh -c "npm install && npm start"
