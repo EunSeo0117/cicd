@@ -47,6 +47,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Debug SSH availability
+        run: ssh -V
+
       - name: Prepare SSH Key
         run: |
           mkdir -p ~/.ssh
